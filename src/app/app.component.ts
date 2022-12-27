@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Todo__App';
+  title = 'Todo App';
+  array:any[]=[]
+  input: any;
+
+
+  btnClick(input:string){
+    this.array.push({
+      id:this.array.length,
+      pname:input
+    });
+  }
+
+  deleteItem(id:number){
+    this.array=this.array.filter(input=>input.id!==id);
+  }
 }
